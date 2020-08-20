@@ -24,4 +24,14 @@ this.fitness += walkFitness;
 
   return this.fitness;
 };
+
+Pet.prototype.feedPet = function() {
+  // removes 3 from hunger unless hunger is at 0 in which case it sets hunger to 0
+  const minimumHungerLevel = 0;
+  const addFood = 3;
+  this.hunger -= addFood;
+    if(this.hunger < minimumHungerLevel) this.hunger = minimumHungerLevel
+  
+    return this.hunger;
+  };
 module.exports = Pet;

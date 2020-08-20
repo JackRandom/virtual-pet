@@ -103,3 +103,24 @@ describe('walkPet', () => {
 
     });
 });
+describe('feedPet', () => {
+  it('calling feedPet should decrease the Pets hunger level by 3', () => {
+    const pet = new Pet('Rex');
+    pet.hunger = 3;
+       pet.feedPet();
+
+    expect(pet.hunger).toEqual(0);
+
+    });
+});
+
+describe('feedPet', () => {
+  it('calling feedPet should decrease the Pets hunger level by 3', () => {
+    const pet = new Pet('Rex');
+    pet.hunger = 0;
+       pet.feedPet();
+
+    expect(pet.hunger).toEqual(0);
+
+    });
+});
