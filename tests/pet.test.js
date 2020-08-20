@@ -52,3 +52,32 @@ describe('growUp fitness', () => {
     expect(pet.fitness).toEqual(7);
   });
 });
+
+describe('walkPet', () => {
+  it('calling walkPet should increase the Pets fitness level by 4', () => {
+    const pet = new Pet('Fido');
+    pet.fitness = 6;
+    pet.walkPet();
+
+    expect(pet.fitness).toEqual(10);
+  });
+});
+describe('walkPet', () => {
+  it('calling walkPet should increase the Pets fitness level by 4', () => {
+    const pet = new Pet('Fido');
+    pet.fitness = 1;
+    pet.walkPet();
+
+    expect(pet.fitness).toEqual(5);
+  });
+});
+describe('walkPet', () => {
+  it('calling walkPet should increase the Pets fitness level by 4', () => {
+    const pet = new Pet('Rex');
+    pet.fitness = 7;
+       pet.walkPet();
+
+    expect(pet.fitness).toEqual(10);
+
+    });
+});
