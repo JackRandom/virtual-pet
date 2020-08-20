@@ -1,10 +1,3 @@
-const fido = new Pet('Fido');
-const rex = new Pet('Rex');
-
-const pet = {};
-
-// pet.name = 'Fido';
-
 
 
 function Pet(name) {
