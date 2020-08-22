@@ -178,28 +178,42 @@ describe('checkUp', () => {
     });
 });
 
+describe('checks that will see if the pet is dead or alive', () => {
+  it('fitness below 0 results in death', () => {
+      const pet = new Pet('Fido');
+      pet.fitness = -1;
+      expect(pet.isAlive).toEqual(false);
+  })
+  it('hunger above 10 results in death', () => {
+      const pet = new Pet('Fido');
+      pet.hunger = 11;
+      expect(pet.isAlive).toEqual(false);
+  })
+  it('age greater than or equal to 30 results in death', () => {
+      const pet = new Pet('Fido');
+      pet.age = 30;
+      expect(pet.isAlive).toEqual(false);
+  })
+});
+
 describe('isAlive', () => {
-  it('checks to see if the pet is alive', () => {
+  it('checks to see if the pet is alive if under 30', () => {
     const pet = new Pet('Rex');
     this.age = 29;
-    this.hunger = 9;
-    this.fitness = 1;
-   
+    expect(pet.isAlive).toEqual(true);
+    })
 
-    expect(pet.isPetAlive(true)).toEqual(true);
+  it('checks to see if the pet is alive if hunger is less than 10', () => {
+      const pet = new Pet('Rex');
+      this.hunger = 9;
+      expect(pet.isAlive).toEqual(true);
+      })
 
-    });
+  it('checks to see if the pet is alive if fitness is over 0', () => {
+        const pet = new Pet('Rex');
+        this.fitness = 7;
+        expect(pet.isAlive).toEqual(true);
+        })
 });
 
-describe('isPetAlive', () => {
-  it('checks to see if the pet is alive', () => {
-    const pet = new Pet('Rex');
-    this.age = 30;
-    this.hunger = 11;
-    this.fitness = 0;
-   
 
-    expect(pet.isPetAlive(false)).toEqual(false);
-
-    });
-});
