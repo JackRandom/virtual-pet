@@ -107,9 +107,8 @@ describe('feedPet', () => {
   it('calling feedPet should decrease the Pets hunger level by 3', () => {
     const pet = new Pet('Rex');
     pet.hunger = 3;
-       pet.feedPet();
 
-    expect(pet.hunger).toEqual(0);
+    expect(pet.feedPet()).toEqual(0);
 
     });
 });
@@ -118,9 +117,63 @@ describe('feedPet', () => {
   it('calling feedPet should decrease the Pets hunger level by 3', () => {
     const pet = new Pet('Rex');
     pet.hunger = 0;
-       pet.feedPet();
 
-    expect(pet.hunger).toEqual(0);
+    expect(pet.feedPet()).toEqual(0);
+
+    });
+});
+
+describe('checkUp', () => {
+  it('calling checkup should return I need a walk if the pets fitness is 3 or less,', () => {
+    const pet = new Pet('Rex');
+    pet.fitness = 3;
+   
+
+    expect(pet.checkUp()).toEqual('I need a walk');
+
+    });
+});
+
+describe('checkUp', () => {
+  it('calling checkup should return I am hungry if the pets hunger is 5 or less,', () => {
+    const pet = new Pet('Rex');
+    pet.hunger = 5;
+   
+    expect(pet.checkUp()).toEqual('I am hungry');
+
+    });
+});
+
+describe('checkUp', () => {
+  it('calling checkUp should return I am hungry AND I need a walk the pets hunger is 5 or less and the fitness is 3 or less,', () => {
+    const pet = new Pet('Rex');
+    pet.hunger = 5;
+    pet.fitness = 3;
+    
+
+    expect(pet.checkUp()).toEqual('I am hungry AND I need a walk');
+    });
+});
+
+describe('checkUp', () => {
+  it('calling checkUp should return I feel great! if pets hunger is less than 5 and the fitness more than 3,', () => {
+    const pet = new Pet('Rex');
+    pet.hunger = 4;
+    pet.fitness = 5;
+    
+
+    expect(pet.checkUp()).toEqual('I feel great!');
+    
+    });
+});
+
+describe('checkUp', () => {
+  it('calling checkup should return I am hungry if the pets hunger is 5 or less,', () => {
+    const pet = new Pet('Rex');
+    pet.hunger = 4;
+   
+
+    expect(pet.checkUp()).toEqual('I feel great!');
 
     });
 });

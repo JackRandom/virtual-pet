@@ -34,4 +34,25 @@ Pet.prototype.feedPet = function() {
   
     return this.hunger;
   };
+  
+  Pet.prototype.checkUp = function() {
+    // check pet's stats and returns messages based on those stats
+var status = '';
+    if (this.hunger >= 5 && this.fitness <= 3) {
+       return 'I am hungry AND I need a walk';
+    }
+
+    if (this.fitness <= 3) {
+    return 'I need a walk';
+    }
+    
+    if (this.hunger >= 5) {
+    return 'I am hungry';
+    }
+
+    else {
+      return 'I feel great!';
+    }
+
+    };
 module.exports = Pet;
