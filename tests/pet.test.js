@@ -177,3 +177,29 @@ describe('checkUp', () => {
 
     });
 });
+
+describe('isAlive', () => {
+  it('checks to see if the pet is alive', () => {
+    const pet = new Pet('Rex');
+    this.age = 29;
+    this.hunger = 9;
+    this.fitness = 1;
+   
+
+    expect(pet.isPetAlive(true)).toEqual(true);
+
+    });
+});
+
+describe('isPetAlive', () => {
+  it('checks to see if the pet is alive', () => {
+    const pet = new Pet('Rex');
+    this.age = 30;
+    this.hunger = 11;
+    this.fitness = 0;
+   
+
+    expect(pet.isPetAlive(false)).toEqual(false);
+
+    });
+});
