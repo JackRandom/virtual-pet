@@ -259,3 +259,21 @@ describe('feedPet', () => {
           expect(() => pet.checkUp()).toThrow('Your pet is dead :(');
           })
         });
+describe('having a Baby', () => {
+
+          it('instantiate a new Pet from inside the haveBaby method', () => {
+            const pet = new Pet('Dad');
+            pet.haveBaby('Kid');
+
+            expect(pet.children[0]).toHaveProperty('name', 'Kid')
+            })
+
+            it('instantiate a multiple Pets from inside the haveBaby method', () => {
+              const pet = new Pet('Dad');
+              pet.haveBaby('Kid');
+              pet.haveBaby('otherKid');
+  
+              expect(pet.children[0]).toHaveProperty('name', 'Kid')
+              expect(pet.children[1]).toHaveProperty('name', 'otherKid')
+              })
+          });
